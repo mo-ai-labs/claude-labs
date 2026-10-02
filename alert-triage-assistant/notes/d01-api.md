@@ -30,7 +30,7 @@
 - [x] **M2** Anatomy of a request *(basic ✅, turns ✅, prefill ✅)*
 - [x] **M3** How the API fails *(HTTP errors, request ID, rate limits)*
 - [ ] ☕ 5-min break
-- [ ] **M4** Synthetic data + three-turn `hello.py`
+- [x] **M4** Synthetic data + three-turn `hello.py`
 - [ ] **M5** Break it on purpose (404, 400 ×2, optional `max_retries=0`)
 - [ ] **M6** Write up, commit, tick Day 1
 
@@ -118,13 +118,25 @@ client.messages.create(
 
 **Three-turn run** (`uv run scripts/hello.py`):
 
-| Turn | stop_reason | input_tokens | output_tokens | request_id |
-|---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+| Turn | Prompt | Reply | stop_reason | input_tokens | output_tokens | request_id |
+|---|---|---|---|---|---|---|
+| 1 | My case id is C-104. Say OK. | "OK. Case C-104 noted." | `end_turn` | 35 | 14 | `req_011CfeCTxjsKNpLSQMinRzQh` |
+| 2 | What's my case id? | "Your case ID is C-104." | `end_turn` | **57** | 12 | `req_011CfeCU4eKcDyFZBMW2TxX9` |
+| 3 | Summarise our chat in 5 words. | "Case C-104 confirmed, recalled." | `end_turn` | **84** | 86 ⚠️ | `req_011CfeCUACSPCWzUB2NtxHMh` |
 
-**Stripped run** (`uv run scripts/hello.py --stripped`): did it recall C-104? ______
+**Stripped run** (`uv run scripts/hello.py --stripped`): ❌ couldn't recall C-104, as predicted
+
+| Turn | Reply | stop_reason | input_tokens | output_tokens | request_id |
+|---|---|---|---|---|---|
+| 1 | "OK." | `end_turn` | 35 | 5 | `req_011CfeCcqJtRPZWVqBRhwbKw` |
+| 2 | "I don't have access to your case management system, so I can't see your case ID…" | `end_turn` | 28 | 101 | `req_011CfeCcvnJZRMQsfXq6QVFx` |
+| 3 | "No prior conversation to summarise." | `end_turn` | 35 | 90 ⚠️ | `req_011CfeCd5UvPwnWGo8BtDKRz` |
+
+**What the numbers say**
+- **Full history:** input went 35 → 57 → 84, about +25 per turn, because every call resends everything. For a 50-turn triage chat, input cost grows roughly *quadratically* over the conversation.
+- **Stripped:** input stayed flat (35 → 28 → 35), and the model had no idea about C-104. *Memory is the `messages` array you send, nothing more.*
+- **Bonus:** Claude didn't make up a case ID. It said it couldn't see one, which is good behavior for an AML assistant.
+- ⚠️ **Open question for Day 2:** turn 3 used **86 / 90 output tokens** for a ~5-word reply. `hello.py` prints only `text` blocks, so the gap is probably **thinking** tokens (billed as output). Check with `print([b.type for b in msg.content])` → Day 2 covers effort and adaptive thinking.
 
 ## 4b. 🔧 Real incident: the 401 that wasn't from Anthropic *(objectives 4.1 · 7.4)*
 
