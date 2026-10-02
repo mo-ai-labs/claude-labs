@@ -18,7 +18,7 @@
 
 | Bet | Question | My bet | Correct answer | Result |
 |---|---|---|---|---|
-| **A** | Turn 2 sends *only* "what's my case id?". What happens? | Claude doesn't know: you must resend the whole history every call | *Fill in after the m2-turns read* | ✅ Win (confirmed by the first sentence of *Multiple conversational turns*) |
+| **A** | Turn 2 sends *only* "what's my case id?". What happens? | Claude doesn't know: you must resend the whole history every call | Must resend: the API is stateless | ✅ Win (confirmed by the first sentence of *Multiple conversational turns*) |
 | **B** | How many times do the SDKs retry a 529 by default? | **1 retry** | **2 retries**, exponential backoff, honoring `retry-after` | ❌ Lost: logged in gap-log |
 
 ---
