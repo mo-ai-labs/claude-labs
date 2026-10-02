@@ -31,7 +31,7 @@
 - [x] **M3** How the API fails *(HTTP errors, request ID, rate limits)*
 - [ ] ☕ 5-min break
 - [x] **M4** Synthetic data + three-turn `hello.py`
-- [ ] **M5** Break it on purpose (404, 400 ×2, optional `max_retries=0`)
+- [x] **M5** Break it on purpose (404, 400 ×2, optional `max_retries=0`)
 - [ ] **M6** Write up, commit, tick Day 1
 
 ---
@@ -155,13 +155,17 @@ client.messages.create(
 
 ## 5. Break it on purpose (Mission 5)
 
+Run with `uv run scripts/break_it.py` (client built with `max_retries=0`).
+> 💡 **Two layers of failure:** the 404 and 400 came from the **API** (each has a request id). The missing-`max_tokens` call failed in **your own process**: the typed SDK checks required arguments before sending anything. Errors without a request id never reached Anthropic, the same lesson as the 401 above.
+
+
 | Experiment | Status | Error type | Message | request_id |
 |---|---|---|---|---|
 | 🎁 *(bonus, unplanned)* first `hello.py` run with a bad key | 401 | `authentication_error` | `invalid x-api-key` | `req_011CfeB2thxZdRTa1TRzEsjh` |
-| model `claude-sonnet-9` | | | | |
-| no `max_tokens` | | | | |
-| prefilled final `assistant` turn on `claude-sonnet-5-5` | | | | |
-| *(optional)* `max_retries=0` during a 529 storm → what changes? | | | | |
+| model `claude-sonnet-9` | **404** | `not_found_error` | `model: claude-sonnet-9` | `req_011CfeCokSkPwFqaV7zjVtcj` |
+| no `max_tokens` | *none: never sent* | Python `TypeError` (client-side) | `Missing required arguments; Expected either ('max_tokens', 'messages' and 'model') or ('max_tokens', 'messages', 'model' and 'stream')` | *none: the SDK caught it before any HTTP call* |
+| prefilled final `assistant` turn on `claude-sonnet-5-5` | **400** | `invalid_request_error` | `This model does not support assistant message prefill. The conversation must end with a user message.` | `req_011CfeComp7JU1dRsVdkJJdQ` |
+| *(optional)* `max_retries=0` during a 529 storm → what changes? | 529 | `overloaded_error` | With `max_retries=0`, every 529 surfaces immediately: no backoff and no 2 automatic retries. Good for seeing raw errors (as `break_it.py` does); in production you'd want the SDK default, or your own backoff **instead of** it, never both stacked. | n/a |
 
 ---
 
@@ -175,10 +179,10 @@ client.messages.create(
 
 ## Done when
 
-- [ ] This file has the request anatomy, stop reasons and the error table
-- [ ] I can say which errors I **retry** (429, 500, 529) and which I **fix** (400, 401, 403, 404, 413)
-- [ ] I can explain why the API is stateless and what that means for cost as a chat grows
-- [ ] `data/alerts.json`, `customers.json` and `transactions.json` exist and are synthetic
+- [x] This file has the request anatomy, stop reasons and the error table
+- [x] I can say which errors I **retry** (429, 500, 529) and which I **fix** (400, 401, 403, 404, 413)
+- [x] I can explain why the API is stateless and what that means for cost as a chat grows
+- [x] `data/alerts.json`, `customers.json` and `transactions.json` exist and are synthetic
 
 ## 🧭 Side quest (10 min): Claude through Amazon Bedrock
 
