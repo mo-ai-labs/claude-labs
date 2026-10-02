@@ -26,7 +26,7 @@
 ## Progress
 
 - [ ] **M0** Place bets ✅ *(done here)*
-- [ ] **M1** Workspace `ccdv-lab` + $25 cap + API key ✅ · repo scaffold · `notes/objectives.md` + `notes/gap-log.md`
+- [x] **M1** Workspace `ccdv-lab` + $25 cap + API key · repo scaffold · `notes/objectives.md` + `notes/gap-log.md`
 - [ ] **M2** Anatomy of a request *(basic ✅, turns ✅, prefill ⬜)*
 - [ ] **M3** How the API fails *(HTTP errors, request ID, rate limits)*
 - [ ] ☕ 5-min break
