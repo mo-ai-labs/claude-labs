@@ -25,11 +25,11 @@
 
 ## Progress
 
-- [ ] **M0** Place bets ✅ *(done here)*
+- [x] **M0** Place bets
 - [x] **M1** Workspace `ccdv-lab` + $25 cap + API key · repo scaffold · `notes/objectives.md` + `notes/gap-log.md`
 - [x] **M2** Anatomy of a request *(basic ✅, turns ✅, prefill ✅)*
 - [x] **M3** How the API fails *(HTTP errors, request ID, rate limits)*
-- [ ] ☕ 5-min break
+- [x] ☕ 5-min break
 - [x] **M4** Synthetic data + three-turn `hello.py`
 - [x] **M5** Break it on purpose (404, 400 ×2, optional `max_retries=0`)
 - [ ] **M6** Write up, commit, tick Day 1
