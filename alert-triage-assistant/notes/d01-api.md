@@ -43,7 +43,7 @@
 
 ```python
 client.messages.create(
-    model="claude-sonnet-5",        # required
+    model="claude-sonnet-5-5",      # required
     max_tokens=256,                 # required
     system="You are a terse AML operations assistant.",  # optional, top-level
     messages=[                      # required: the FULL history, every call
