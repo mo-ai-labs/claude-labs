@@ -126,6 +126,21 @@ client.messages.create(
 
 **Stripped run** (`uv run scripts/hello.py --stripped`): did it recall C-104? ______
 
+## 4b. 🔧 Real incident: the 401 that wasn't from Anthropic *(objectives 4.1 · 7.4)*
+
+| Step | Observation | What it ruled out or showed |
+|---|---|---|
+| 1 | `401 authentication_error` · `invalid x-api-key` · `request_id: req_011CfeB2thxZdRTa1TRzEsjh` | Anthropic answered (it has a request id), so a key was sent and rejected. **Fix, don't retry.** |
+| 2 | Created a new key, still 401, but now `API key is invalid.` with **`request_id: None`** | No request id means the response probably didn't come from the API itself |
+| 3 | `scripts/check_key.py`: `base_url = https://api.anthropic.com`, no proxy vars, key prefix **`sk-ant-usr`**, raw call → `401`, `server=cloudflare`, no request id | Not a redirect or proxy. The key itself is being turned away before it reaches the API |
+| 4 | [Get your API key](https://platform.claude.com/docs/en/get-api-key): keys are *personal*, *service account* or legacy *workspace* keys. A key that works on multiple workspaces **must send `anthropic-workspace-id`** | Likely cause: the personal key wasn't scoped to a workspace |
+| ✅ | **Re-created the key scoped to `ccdv-lab`**: works | Root cause: an unscoped personal key with no `anthropic-workspace-id` header |
+
+**Lessons**
+- **No `request-id` on an error is a clue:** the failure happened before the API, at the edge, a proxy or a gateway. Isolate the layer before touching the code.
+- **Scope keys to a workspace.** It removes the need for the header *and* keeps spend under that workspace's limit ($25 on `ccdv-lab`).
+- **Diagnose without leaking secrets:** print the prefix and length only, never the key.
+
 ## 5. Break it on purpose (Mission 5)
 
 | Experiment | Status | Error type | Message | request_id |
