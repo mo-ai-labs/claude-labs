@@ -32,7 +32,7 @@
 - [x] ☕ 5-min break
 - [x] **M4** Synthetic data + three-turn `hello.py`
 - [x] **M5** Break it on purpose (404, 400 ×2, optional `max_retries=0`)
-- [ ] **M6** Write up, commit, tick Day 1
+- [x] **M6** Write up, commit, tick Day 1
 
 ---
 
