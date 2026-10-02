@@ -130,6 +130,7 @@ client.messages.create(
 
 | Experiment | Status | Error type | Message | request_id |
 |---|---|---|---|---|
+| 🎁 *(bonus, unplanned)* first `hello.py` run with a bad key | 401 | `authentication_error` | `invalid x-api-key` | `req_011CfeB2thxZdRTa1TRzEsjh` |
 | model `claude-sonnet-9` | | | | |
 | no `max_tokens` | | | | |
 | prefilled final `assistant` turn on `claude-sonnet-5-5` | | | | |
