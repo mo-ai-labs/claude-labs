@@ -4,4 +4,4 @@ Log every miss: a wrong quiz answer, a lost bet, or a doc fact that surprised yo
 
 | Date | Objective | Why I missed it | Doc link |
 |---|---|---|---|
-| 2026-10-02 | 2.3 | *(pending Mission 3)* Bet B: I bet the SDKs retry a 529 **1×** by default. Fill in once scored. | [Errors → HTTP errors](https://platform.claude.com/docs/en/api/errors#http-errors) |
+| 2026-10-02 | 2.3 / 4.1 | Bet B: guessed the SDKs retry a 529 **1×** by default; the docs say **2×** (exponential backoff, honoring `retry-after`). Under-estimated the built-in retries, so raw retry loops on top would multiply calls. | [Errors → HTTP errors](https://platform.claude.com/docs/en/api/errors#http-errors) |

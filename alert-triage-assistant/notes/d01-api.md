@@ -19,7 +19,7 @@
 | Bet | Question | My bet | Correct answer | Result |
 |---|---|---|---|---|
 | **A** | Turn 2 sends *only* "what's my case id?". What happens? | Claude doesn't know: you must resend the whole history every call | *Fill in after the m2-turns read* | ✅ Win (confirmed by the first sentence of *Multiple conversational turns*) |
-| **B** | How many times do the SDKs retry a 529 by default? | **1 retry** | *Fill in after the m3 HTTP-errors read* | ⏳ Scored in Mission 3 |
+| **B** | How many times do the SDKs retry a 529 by default? | **1 retry** | **2 retries**, exponential backoff, honoring `retry-after` | ❌ Lost: logged in gap-log |
 
 ---
 
@@ -27,7 +27,7 @@
 
 - [ ] **M0** Place bets ✅ *(done here)*
 - [x] **M1** Workspace `ccdv-lab` + $25 cap + API key · repo scaffold · `notes/objectives.md` + `notes/gap-log.md`
-- [ ] **M2** Anatomy of a request *(basic ✅, turns ✅, prefill ⬜)*
+- [x] **M2** Anatomy of a request *(basic ✅, turns ✅, prefill ✅)*
 - [ ] **M3** How the API fails *(HTTP errors, request ID, rate limits)*
 - [ ] ☕ 5-min break
 - [ ] **M4** Synthetic data + three-turn `hello.py`
@@ -58,7 +58,7 @@ client.messages.create(
   - Cost consequence: every turn re-bills the whole history as input tokens, so `input_tokens` grows each turn.
 - **Synthetic assistant turns:** earlier `assistant` turns don't have to come from Claude; you can write them yourself.
 - **`system`:** use the top-level field for instructions that apply from the start. A mid-conversation system message is appended at the end, so it doesn't invalidate the cached prefix.
-- **Sampling params:** `temperature`, `top_p` and `top_k` are **not supported on Claude 4.7 and later**.
+- **Sampling params:** `temperature`, `top_p` and `top_k` are **not supported on Claude 4.7 and later** (or Mythos Preview). Setting a **non-default value returns a 400**; it isn't silently ignored.
 - **Prefill:** **not supported on Claude 4.6 and later** (or Mythos Preview); it returns a **400**. Use [structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs) or system-prompt instructions instead. ([source](https://platform.claude.com/docs/en/build-with-claude/working-with-messages#prefilling-claudes-response))
 
 > ⚠️ **Exam trap: old tricks on new models.** *"Prefill `{` to force JSON"* and *"temperature 0 for determinism"* both fail on current models. The current answers are **structured outputs** and **clear instructions**.
@@ -97,7 +97,7 @@ client.messages.create(
 | 529 | `overloaded_error` | **Retry** with backoff | request_id |
 
 > **SDK retries:** *"The official SDKs automatically retry transient failures (such as connection errors, rate limits, and 5xx server errors) with exponential backoff, **twice by default**, honoring the `retry-after` header when present."*
-> → Bet B result: ______
+> → Bet B result: ❌ bet 1, actual **2**
 
 **Request ID** ([source](https://platform.claude.com/docs/en/api/errors#request-id)): every response has a `request-id` header. The Python SDK exposes it as `msg._request_id`, and error bodies repeat it as `request_id`.
 
