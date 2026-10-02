@@ -1,0 +1,826 @@
+[
+  {
+    "id": "ALRT-0001",
+    "customer_id": "CUST-0024",
+    "rule": "structuring",
+    "amount": 46034.67,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "US",
+    "narrative": "5 cash deposits just under the 10,000 reporting threshold within 5 days at different branches.",
+    "created_at": "2026-08-05",
+    "transaction_ids": [
+      "TX-000088",
+      "TX-000089",
+      "TX-000090",
+      "TX-000091",
+      "TX-000092"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0002",
+    "customer_id": "CUST-0010",
+    "rule": "rapid_movement",
+    "amount": 167043.23,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "PA",
+    "narrative": "Incoming wire of 84,942 moved out within 24h to PA; account balance returned to near zero.",
+    "created_at": "2026-07-19",
+    "transaction_ids": [
+      "TX-000093",
+      "TX-000094"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0003",
+    "customer_id": "CUST-0021",
+    "rule": "high_risk_corridor",
+    "amount": 81077.62,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "MT",
+    "narrative": "Outbound wires to MT, a corridor on the lab's high-risk list, with no stated business link.",
+    "created_at": "2026-07-20",
+    "transaction_ids": [
+      "TX-000095",
+      "TX-000096",
+      "TX-000097"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0004",
+    "customer_id": "CUST-0025",
+    "rule": "large_cash",
+    "amount": 45153.0,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "CA",
+    "narrative": "Single cash deposit well above expected monthly volume (15,000).",
+    "created_at": "2026-08-06",
+    "transaction_ids": [
+      "TX-000098"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0005",
+    "customer_id": "CUST-0023",
+    "rule": "dormant_reactivation",
+    "amount": 61539.73,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "CY",
+    "narrative": "Account inactive for 14+ months suddenly shows high-value activity.",
+    "created_at": "2026-08-08",
+    "transaction_ids": [
+      "TX-000099",
+      "TX-000100"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0006",
+    "customer_id": "CUST-0008",
+    "rule": "round_amounts",
+    "amount": 50000,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "NL",
+    "narrative": "Repeated round-figure outbound wires with vague payment references ('services', 'invoice').",
+    "created_at": "2026-08-19",
+    "transaction_ids": [
+      "TX-000101",
+      "TX-000102",
+      "TX-000103"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0007",
+    "customer_id": "CUST-0030",
+    "rule": "third_party_funding",
+    "amount": 35813.68,
+    "currency": "CAD",
+    "origin_country": "AE",
+    "destination_country": "CA",
+    "narrative": "3 unrelated third parties funded the account from AE; funds then used for a single large purchase.",
+    "created_at": "2026-08-26",
+    "transaction_ids": [
+      "TX-000104",
+      "TX-000105",
+      "TX-000106"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0008",
+    "customer_id": "CUST-0025",
+    "rule": "structuring",
+    "amount": 35568.64,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "CA",
+    "narrative": "4 cash deposits just under the 10,000 reporting threshold within 4 days at different branches.",
+    "created_at": "2026-08-25",
+    "transaction_ids": [
+      "TX-000107",
+      "TX-000108",
+      "TX-000109",
+      "TX-000110"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0009",
+    "customer_id": "CUST-0019",
+    "rule": "rapid_movement",
+    "amount": 47186.7,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "CA",
+    "narrative": "Incoming wire of 24,196 moved out within 24h to CA; account balance returned to near zero.",
+    "created_at": "2026-08-08",
+    "transaction_ids": [
+      "TX-000111",
+      "TX-000112"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0010",
+    "customer_id": "CUST-0024",
+    "rule": "high_risk_corridor",
+    "amount": 15348.99,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "CY",
+    "narrative": "Outbound wires to CY, a corridor on the lab's high-risk list, with no stated business link.",
+    "created_at": "2026-06-16",
+    "transaction_ids": [
+      "TX-000113"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0011",
+    "customer_id": "CUST-0026",
+    "rule": "large_cash",
+    "amount": 24987.24,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "US",
+    "narrative": "Single cash deposit well above expected monthly volume (8,000).",
+    "created_at": "2026-07-14",
+    "transaction_ids": [
+      "TX-000114"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0012",
+    "customer_id": "CUST-0015",
+    "rule": "dormant_reactivation",
+    "amount": 88978.41,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "KY",
+    "narrative": "Account inactive for 14+ months suddenly shows high-value activity.",
+    "created_at": "2026-08-20",
+    "transaction_ids": [
+      "TX-000115",
+      "TX-000116"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0013",
+    "customer_id": "CUST-0018",
+    "rule": "round_amounts",
+    "amount": 70000,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "NL",
+    "narrative": "Repeated round-figure outbound wires with vague payment references ('services', 'invoice').",
+    "created_at": "2026-06-27",
+    "transaction_ids": [
+      "TX-000117",
+      "TX-000118",
+      "TX-000119"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0014",
+    "customer_id": "CUST-0013",
+    "rule": "third_party_funding",
+    "amount": 57008.76,
+    "currency": "CAD",
+    "origin_country": "FR",
+    "destination_country": "CA",
+    "narrative": "4 unrelated third parties funded the account from FR; funds then used for a single large purchase.",
+    "created_at": "2026-08-21",
+    "transaction_ids": [
+      "TX-000120",
+      "TX-000121",
+      "TX-000122",
+      "TX-000123"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0015",
+    "customer_id": "CUST-0011",
+    "rule": "structuring",
+    "amount": 45228.45,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "US",
+    "narrative": "5 cash deposits just under the 10,000 reporting threshold within 5 days at different branches.",
+    "created_at": "2026-06-25",
+    "transaction_ids": [
+      "TX-000124",
+      "TX-000125",
+      "TX-000126",
+      "TX-000127",
+      "TX-000128"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0016",
+    "customer_id": "CUST-0026",
+    "rule": "rapid_movement",
+    "amount": 93173.69,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "PA",
+    "narrative": "Incoming wire of 47,900 moved out within 24h to PA; account balance returned to near zero.",
+    "created_at": "2026-07-09",
+    "transaction_ids": [
+      "TX-000129",
+      "TX-000130"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0017",
+    "customer_id": "CUST-0026",
+    "rule": "high_risk_corridor",
+    "amount": 39574.06,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "CY",
+    "narrative": "Outbound wires to CY, a corridor on the lab's high-risk list, with no stated business link.",
+    "created_at": "2026-07-22",
+    "transaction_ids": [
+      "TX-000131"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0018",
+    "customer_id": "CUST-0004",
+    "rule": "large_cash",
+    "amount": 19943.09,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "US",
+    "narrative": "Single cash deposit well above expected monthly volume (3,000).",
+    "created_at": "2026-07-09",
+    "transaction_ids": [
+      "TX-000132"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0019",
+    "customer_id": "CUST-0010",
+    "rule": "dormant_reactivation",
+    "amount": 65486.41,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "CA",
+    "narrative": "Account inactive for 14+ months suddenly shows high-value activity.",
+    "created_at": "2026-06-19",
+    "transaction_ids": [
+      "TX-000133",
+      "TX-000134"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0020",
+    "customer_id": "CUST-0004",
+    "rule": "round_amounts",
+    "amount": 120000,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "CA",
+    "narrative": "Repeated round-figure outbound wires with vague payment references ('services', 'invoice').",
+    "created_at": "2026-08-17",
+    "transaction_ids": [
+      "TX-000135",
+      "TX-000136",
+      "TX-000137"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0021",
+    "customer_id": "CUST-0019",
+    "rule": "third_party_funding",
+    "amount": 24124.77,
+    "currency": "USD",
+    "origin_country": "AE",
+    "destination_country": "US",
+    "narrative": "3 unrelated third parties funded the account from AE; funds then used for a single large purchase.",
+    "created_at": "2026-07-28",
+    "transaction_ids": [
+      "TX-000138",
+      "TX-000139",
+      "TX-000140"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0022",
+    "customer_id": "CUST-0024",
+    "rule": "structuring",
+    "amount": 27859.4,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "US",
+    "narrative": "3 cash deposits just under the 10,000 reporting threshold within 3 days at different branches.",
+    "created_at": "2026-07-29",
+    "transaction_ids": [
+      "TX-000141",
+      "TX-000142",
+      "TX-000143"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0023",
+    "customer_id": "CUST-0023",
+    "rule": "rapid_movement",
+    "amount": 99693.48,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "AU",
+    "narrative": "Incoming wire of 50,768 moved out within 24h to AU; account balance returned to near zero.",
+    "created_at": "2026-08-08",
+    "transaction_ids": [
+      "TX-000144",
+      "TX-000145"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0024",
+    "customer_id": "CUST-0004",
+    "rule": "high_risk_corridor",
+    "amount": 19097.64,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "KY",
+    "narrative": "Outbound wires to KY, a corridor on the lab's high-risk list, with no stated business link.",
+    "created_at": "2026-07-12",
+    "transaction_ids": [
+      "TX-000146",
+      "TX-000147"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0025",
+    "customer_id": "CUST-0010",
+    "rule": "large_cash",
+    "amount": 59422.33,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "US",
+    "narrative": "Single cash deposit well above expected monthly volume (3,000).",
+    "created_at": "2026-08-16",
+    "transaction_ids": [
+      "TX-000148"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0026",
+    "customer_id": "CUST-0017",
+    "rule": "dormant_reactivation",
+    "amount": 119398.45,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "MT",
+    "narrative": "Account inactive for 14+ months suddenly shows high-value activity.",
+    "created_at": "2026-08-14",
+    "transaction_ids": [
+      "TX-000149",
+      "TX-000150"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0027",
+    "customer_id": "CUST-0021",
+    "rule": "round_amounts",
+    "amount": 55000,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "GB",
+    "narrative": "Repeated round-figure outbound wires with vague payment references ('services', 'invoice').",
+    "created_at": "2026-08-16",
+    "transaction_ids": [
+      "TX-000151",
+      "TX-000152",
+      "TX-000153"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0028",
+    "customer_id": "CUST-0002",
+    "rule": "third_party_funding",
+    "amount": 67562.6,
+    "currency": "CAD",
+    "origin_country": "AE",
+    "destination_country": "CA",
+    "narrative": "4 unrelated third parties funded the account from AE; funds then used for a single large purchase.",
+    "created_at": "2026-07-24",
+    "transaction_ids": [
+      "TX-000154",
+      "TX-000155",
+      "TX-000156",
+      "TX-000157"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0029",
+    "customer_id": "CUST-0020",
+    "rule": "structuring",
+    "amount": 44683.89,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "US",
+    "narrative": "5 cash deposits just under the 10,000 reporting threshold within 5 days at different branches.",
+    "created_at": "2026-08-05",
+    "transaction_ids": [
+      "TX-000158",
+      "TX-000159",
+      "TX-000160",
+      "TX-000161",
+      "TX-000162"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0030",
+    "customer_id": "CUST-0026",
+    "rule": "rapid_movement",
+    "amount": 72698.75,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "NL",
+    "narrative": "Incoming wire of 37,176 moved out within 24h to NL; account balance returned to near zero.",
+    "created_at": "2026-08-27",
+    "transaction_ids": [
+      "TX-000163",
+      "TX-000164"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0031",
+    "customer_id": "CUST-0012",
+    "rule": "high_risk_corridor",
+    "amount": 29306.56,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "PA",
+    "narrative": "Outbound wires to PA, a corridor on the lab's high-risk list, with no stated business link.",
+    "created_at": "2026-08-11",
+    "transaction_ids": [
+      "TX-000165"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0032",
+    "customer_id": "CUST-0008",
+    "rule": "large_cash",
+    "amount": 39868.06,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "US",
+    "narrative": "Single cash deposit well above expected monthly volume (5,000).",
+    "created_at": "2026-06-26",
+    "transaction_ids": [
+      "TX-000166"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0033",
+    "customer_id": "CUST-0027",
+    "rule": "dormant_reactivation",
+    "amount": 48122.06,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "PA",
+    "narrative": "Account inactive for 14+ months suddenly shows high-value activity.",
+    "created_at": "2026-08-09",
+    "transaction_ids": [
+      "TX-000167",
+      "TX-000168"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0034",
+    "customer_id": "CUST-0027",
+    "rule": "round_amounts",
+    "amount": 70000,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "CA",
+    "narrative": "Repeated round-figure outbound wires with vague payment references ('services', 'invoice').",
+    "created_at": "2026-07-22",
+    "transaction_ids": [
+      "TX-000169",
+      "TX-000170",
+      "TX-000171"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0035",
+    "customer_id": "CUST-0017",
+    "rule": "third_party_funding",
+    "amount": 47492.15,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "US",
+    "narrative": "3 unrelated third parties funded the account from US; funds then used for a single large purchase.",
+    "created_at": "2026-08-27",
+    "transaction_ids": [
+      "TX-000172",
+      "TX-000173",
+      "TX-000174"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0036",
+    "customer_id": "CUST-0016",
+    "rule": "structuring",
+    "amount": 27924.41,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "CA",
+    "narrative": "3 cash deposits just under the 10,000 reporting threshold within 3 days at different branches.",
+    "created_at": "2026-07-17",
+    "transaction_ids": [
+      "TX-000175",
+      "TX-000176",
+      "TX-000177"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0037",
+    "customer_id": "CUST-0005",
+    "rule": "rapid_movement",
+    "amount": 56334.16,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "DE",
+    "narrative": "Incoming wire of 28,791 moved out within 24h to DE; account balance returned to near zero.",
+    "created_at": "2026-08-05",
+    "transaction_ids": [
+      "TX-000178",
+      "TX-000179"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0038",
+    "customer_id": "CUST-0027",
+    "rule": "high_risk_corridor",
+    "amount": 49975.31,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "MT",
+    "narrative": "Outbound wires to MT, a corridor on the lab's high-risk list, with no stated business link.",
+    "created_at": "2026-07-03",
+    "transaction_ids": [
+      "TX-000180",
+      "TX-000181"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0039",
+    "customer_id": "CUST-0022",
+    "rule": "large_cash",
+    "amount": 29611.06,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "CA",
+    "narrative": "Single cash deposit well above expected monthly volume (15,000).",
+    "created_at": "2026-07-04",
+    "transaction_ids": [
+      "TX-000182"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0040",
+    "customer_id": "CUST-0003",
+    "rule": "dormant_reactivation",
+    "amount": 97943.02,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "CA",
+    "narrative": "Account inactive for 14+ months suddenly shows high-value activity.",
+    "created_at": "2026-07-07",
+    "transaction_ids": [
+      "TX-000183",
+      "TX-000184"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0041",
+    "customer_id": "CUST-0004",
+    "rule": "round_amounts",
+    "amount": 85000,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "FR",
+    "narrative": "Repeated round-figure outbound wires with vague payment references ('services', 'invoice').",
+    "created_at": "2026-06-26",
+    "transaction_ids": [
+      "TX-000185",
+      "TX-000186",
+      "TX-000187"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0042",
+    "customer_id": "CUST-0005",
+    "rule": "third_party_funding",
+    "amount": 38011.3,
+    "currency": "CAD",
+    "origin_country": "AU",
+    "destination_country": "CA",
+    "narrative": "3 unrelated third parties funded the account from AU; funds then used for a single large purchase.",
+    "created_at": "2026-08-19",
+    "transaction_ids": [
+      "TX-000188",
+      "TX-000189",
+      "TX-000190"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0043",
+    "customer_id": "CUST-0021",
+    "rule": "structuring",
+    "amount": 28265.42,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "CA",
+    "narrative": "3 cash deposits just under the 10,000 reporting threshold within 3 days at different branches.",
+    "created_at": "2026-06-14",
+    "transaction_ids": [
+      "TX-000191",
+      "TX-000192",
+      "TX-000193"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0044",
+    "customer_id": "CUST-0012",
+    "rule": "rapid_movement",
+    "amount": 147107.41,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "US",
+    "narrative": "Incoming wire of 75,224 moved out within 24h to US; account balance returned to near zero.",
+    "created_at": "2026-08-19",
+    "transaction_ids": [
+      "TX-000194",
+      "TX-000195"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0045",
+    "customer_id": "CUST-0028",
+    "rule": "high_risk_corridor",
+    "amount": 5826.72,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "PA",
+    "narrative": "Outbound wires to PA, a corridor on the lab's high-risk list, with no stated business link.",
+    "created_at": "2026-08-22",
+    "transaction_ids": [
+      "TX-000196"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0046",
+    "customer_id": "CUST-0020",
+    "rule": "large_cash",
+    "amount": 27445.38,
+    "currency": "USD",
+    "origin_country": "US",
+    "destination_country": "US",
+    "narrative": "Single cash deposit well above expected monthly volume (15,000).",
+    "created_at": "2026-07-09",
+    "transaction_ids": [
+      "TX-000197"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0047",
+    "customer_id": "CUST-0009",
+    "rule": "dormant_reactivation",
+    "amount": 96925.0,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "VG",
+    "narrative": "Account inactive for 14+ months suddenly shows high-value activity.",
+    "created_at": "2026-06-14",
+    "transaction_ids": [
+      "TX-000198",
+      "TX-000199"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0048",
+    "customer_id": "CUST-0023",
+    "rule": "round_amounts",
+    "amount": 80000,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "AU",
+    "narrative": "Repeated round-figure outbound wires with vague payment references ('services', 'invoice').",
+    "created_at": "2026-06-21",
+    "transaction_ids": [
+      "TX-000200",
+      "TX-000201",
+      "TX-000202"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0049",
+    "customer_id": "CUST-0015",
+    "rule": "third_party_funding",
+    "amount": 40426.71,
+    "currency": "CAD",
+    "origin_country": "PA",
+    "destination_country": "CA",
+    "narrative": "4 unrelated third parties funded the account from PA; funds then used for a single large purchase.",
+    "created_at": "2026-08-18",
+    "transaction_ids": [
+      "TX-000203",
+      "TX-000204",
+      "TX-000205",
+      "TX-000206"
+    ],
+    "synthetic": true
+  },
+  {
+    "id": "ALRT-0050",
+    "customer_id": "CUST-0005",
+    "rule": "structuring",
+    "amount": 43978.06,
+    "currency": "CAD",
+    "origin_country": "CA",
+    "destination_country": "CA",
+    "narrative": "5 cash deposits just under the 10,000 reporting threshold within 5 days at different branches.",
+    "created_at": "2026-08-06",
+    "transaction_ids": [
+      "TX-000207",
+      "TX-000208",
+      "TX-000209",
+      "TX-000210",
+      "TX-000211"
+    ],
+    "synthetic": true
+  }
+]

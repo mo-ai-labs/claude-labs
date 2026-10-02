@@ -28,7 +28,7 @@
 - [ ] **M0** Place bets ✅ *(done here)*
 - [x] **M1** Workspace `ccdv-lab` + $25 cap + API key · repo scaffold · `notes/objectives.md` + `notes/gap-log.md`
 - [x] **M2** Anatomy of a request *(basic ✅, turns ✅, prefill ✅)*
-- [ ] **M3** How the API fails *(HTTP errors, request ID, rate limits)*
+- [x] **M3** How the API fails *(HTTP errors, request ID, rate limits)*
 - [ ] ☕ 5-min break
 - [ ] **M4** Synthetic data + three-turn `hello.py`
 - [ ] **M5** Break it on purpose (404, 400 ×2, optional `max_retries=0`)
@@ -114,6 +114,8 @@ client.messages.create(
 
 ## 4. Lab results (Mission 4)
 
+> ⚠️ The plan says `claude-sonnet-5`, but that ID isn't on the [current models list](https://platform.claude.com/docs/en/about-claude/models/overview). `hello.py` defaults to `claude-sonnet-5-5` (override with `CCDV_MODEL`).
+
 **Three-turn run** (`uv run scripts/hello.py`):
 
 | Turn | stop_reason | input_tokens | output_tokens | request_id |
@@ -122,7 +124,7 @@ client.messages.create(
 | 2 | | | | |
 | 3 | | | | |
 
-**Stripped run** (only the last user message in `messages`): did it recall C-104? ______
+**Stripped run** (`uv run scripts/hello.py --stripped`): did it recall C-104? ______
 
 ## 5. Break it on purpose (Mission 5)
 
@@ -130,7 +132,7 @@ client.messages.create(
 |---|---|---|---|---|
 | model `claude-sonnet-9` | | | | |
 | no `max_tokens` | | | | |
-| prefilled final `assistant` turn on `claude-sonnet-5` | | | | |
+| prefilled final `assistant` turn on `claude-sonnet-5-5` | | | | |
 | *(optional)* `max_retries=0` during a 529 storm → what changes? | | | | |
 
 ---
